@@ -10,8 +10,8 @@ public class Main {
 		RestfyJavaServer jettyServer = new RestfyJavaServer(8080);
 		String warAbsolutePath = new File("../java-server-war-test/target/java-server-war-test-0.0.1-SNAPSHOT.war").getAbsolutePath();
 
-		jettyServer.addClassHolder("/simple/*", EntryPoint.class.getCanonicalName(), null);
-		//jettyServer.setWar("/java-server-war-test", warAbsolutePath);
+		//jettyServer.addClassHolder("/simple/*", EntryPoint.class.getCanonicalName(), null);
+		jettyServer.setWar("/java-server-war-test", warAbsolutePath);
 
 		try {
 			jettyServer.start();

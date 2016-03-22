@@ -13,6 +13,7 @@
   	<module>restify-aggregator</module>
   	<module>container-boom</module>
   	<module>restify-server</module>
+  	<module>plugins</module>
   </modules>
 	<build>
 		<defaultGoal>clean install test</defaultGoal>

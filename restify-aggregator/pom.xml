@@ -35,6 +35,8 @@
 		<version.junit>4.11</version.junit>
 		<version.mokito>1.10.19</version.mokito>
 		<version.log4j>1.2.14</version.log4j>
+		<version.slf4j>2.3</version.slf4j>
+		<version.slf4j-log4j12>2.4</version.slf4j-log4j12>
 		<version.resteasy>2.0.1.GA</version.resteasy>
 		<version.slf4j>2.3</version.slf4j>
 		<version.apachelogging>2.3</version.apachelogging>
@@ -217,6 +219,16 @@
 			</dependency>
 			<dependency>
 				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-core</artifactId>
+				<version>${version.jersey}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-server</artifactId>
+				<version>${version.jersey}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
 				<artifactId>jersey-bundle</artifactId>
 				<version>${version.jersey}</version>
 				<scope>test</scope>
@@ -227,26 +239,26 @@
 				<version>${version.jersey}</version>
 				<scope>test</scope>
 			</dependency>
-		    <dependency>
-		        <groupId>com.sun.jersey</groupId>
-		        <artifactId>jersey-core</artifactId>
-		        <version>${version.jersey}</version>
-		    </dependency>
-		    <dependency>
-		        <groupId>com.sun.jersey</groupId>
-		        <artifactId>jersey-json</artifactId>
-		        <version>${version.jersey}</version>
-		    </dependency>
-		    <dependency>
-		        <groupId>com.sun.jersey</groupId>
-		        <artifactId>jersey-server</artifactId>
-		        <version>${version.jersey}</version>
-		    </dependency>
-		    <dependency>
-		        <groupId>com.sun.jersey</groupId>
-		        <artifactId>jersey-servlet</artifactId>
-		        <version>${version.jersey}</version>
-		    </dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-core</artifactId>
+				<version>${version.jersey}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-json</artifactId>
+				<version>${version.jersey}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-server</artifactId>
+				<version>${version.jersey}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-servlet</artifactId>
+				<version>${version.jersey}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.jboss.resteasy</groupId>
 				<artifactId>resteasy-jaxrs</artifactId>

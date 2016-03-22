@@ -66,7 +66,7 @@ public class TestRestfyJavaServer {
 		assertEquals(testResult, restResponse.getResponse());
 	}
 
-	@Test(timeout=5000)
+	@Test(timeout=8000)
 	public void test5InstallWARHolder() throws Throwable {
 		/* Servlet and HTTPWebApplication context doesn't live together
 		 * So we first stop and destroy the server than we deploy the war and restart we the server
