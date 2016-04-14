@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.service.restify</groupId>
+	<artifactId>java-server-plugin-classes-test</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<url>http://maven.apache.org</url>
+	<name>Java Server Maven Plugin Test POM</name>
+	<organization>
+		<name>Fabrizio Torelli</name>
+		<url>http://ie.linkedin.com/in/fabriziotorelli</url>
+	</organization>
+	<prerequisites>
+		<maven>3.0.3</maven>
+	</prerequisites>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>java-server-plugin</artifactId>
+				<version>${project.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<hostname>localhost</hostname>
+					<loopback>15001</loopback>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
