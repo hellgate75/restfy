@@ -7,7 +7,7 @@
   </Appenders>
   <Loggers>
     <logger name="com.service.restfy.java.server" level="DEBUG"></logger>
-	<Root level="WARN">
+	<Root level="ERROR">
 		<AppenderRef ref="Console"/>
 	</Root>
   </Loggers>

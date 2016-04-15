@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="1.199" errors="0" skipped="0" tests="1" name="com.restify.tests.java.server.plugin.JavaServerPluginTest">
+<testsuite failures="1" time="1.418" errors="0" skipped="0" tests="1" name="com.restify.tests.java.server.plugin.JavaServerPluginTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_79\jre\bin"/>
@@ -26,9 +26,9 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8.1"/>
-    <property name="classworlds.conf" value="C:\Lavoro\WORKSPACES\workspace-restfy\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3177369974301998941.tmp"/>
+    <property name="classworlds.conf" value="C:\Lavoro\WORKSPACES\workspace-restfy\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1381348215177816907.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_79\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/lib/amd64;C:\Program Files\Broadcom\Broadcom 802.11;;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python34\;C:\Python34\Scripts;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\libexec\gcc\i686-w64-mingw32\5.1.0;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\i686-w64-mingw32\lib;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\bin;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\i686-w64-mingw32\bin;C:\Program Files\Java\jdk1.7.0_79\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Hewlett-Packard\SimplePass\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Users\Fabrizio\AppData\Roaming\npm;C:\Program Files\nodejs\phantomjs-2.1.1-windows;C:\Program Files\nodejs\phantomjs-2.1.1-windows\bin;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files (x86)\Skype\Phone\;C:\Users\Fabrizio\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Lavoro\apache-maven-3.2.3\bin;C:\Program Files\Mercurial\;C:\Program Files (x86)\Bitvise SSH Client;;C:\Users\Fabrizio\.lein\bin;C:\Program Files\Mercurial;C:\Users\Fabrizio\AppData\Local\atom\bin;C:\Lavoro\eclipse-jee-juno-SR2-win32-x86_64\eclipse;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_79\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/lib/amd64;C:\Program Files\Broadcom\Broadcom 802.11;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python34\;C:\Python34\Scripts;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\libexec\gcc\i686-w64-mingw32\5.1.0;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\i686-w64-mingw32\lib;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\bin;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\i686-w64-mingw32\bin;C:\Program Files\Java\jdk1.7.0_79\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Hewlett-Packard\SimplePass\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Users\Fabrizio\AppData\Roaming\npm;C:\Program Files\nodejs\phantomjs-2.1.1-windows;C:\Program Files\nodejs\phantomjs-2.1.1-windows\bin;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files (x86)\Skype\Phone\;C:\Users\Fabrizio\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Lavoro\apache-maven-3.2.3\bin;C:\Program Files\Mercurial\;C:\Program Files (x86)\Bitvise SSH Client;;C:\Users\Fabrizio\.lein\bin;C:\Program Files\Mercurial;C:\Users\Fabrizio\AppData\Local\atom\bin;C:\Lavoro\eclipse-jee-juno-SR2-win32-x86_64\eclipse;;."/>
     <property name="m2e.workspace.state" value="C:\Lavoro\WORKSPACES\workspace-restfy\.metadata\.plugins\org.eclipse.m2e.core\workspacestate.properties"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
@@ -62,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="1.199" classname="Description" name="test0PluginMustBeCreated">
+  <testcase time="1.418" classname="Description" name="test0PluginMustBeCreated">
     <failure message="expected:&lt;200&gt; but was:&lt;404&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;200&gt; but was:&lt;404&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:743)
@@ -71,5 +71,53 @@
 	at org.junit.Assert.assertEquals(Assert.java:542)
 	at com.restify.tests.java.server.plugin.JavaServerPluginTest.test0PluginMustBeCreated(JavaServerPluginTest.java:24)
 </failure>
+    <system-out>08:31:02.665 [Thread-0] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager - Get connection for route {}-&gt;http://localhost:8080
+08:31:02.686 [Thread-0] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator - Connecting to localhost:8080
+08:31:02.719 [Thread-0] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+08:31:02.722 [Thread-0] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+08:31:02.722 [Thread-0] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+08:31:02.723 [Thread-0] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+08:31:02.723 [Thread-0] DEBUG org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+08:31:02.724 [Thread-0] DEBUG org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /simple/entry-point/test HTTP/1.1
+08:31:02.725 [Thread-0] DEBUG org.apache.http.wire -  &gt;&gt; &quot;GET /simple/entry-point/test HTTP/1.1[\r][\n]&quot;
+08:31:02.727 [Thread-0] DEBUG org.apache.http.wire -  &gt;&gt; &quot;Host: localhost:8080[\r][\n]&quot;
+08:31:02.727 [Thread-0] DEBUG org.apache.http.wire -  &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+08:31:02.727 [Thread-0] DEBUG org.apache.http.wire -  &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.4.1 (Java/1.7.0_79)[\r][\n]&quot;
+08:31:02.727 [Thread-0] DEBUG org.apache.http.wire -  &gt;&gt; &quot;[\r][\n]&quot;
+08:31:02.728 [Thread-0] DEBUG org.apache.http.headers - &gt;&gt; GET /simple/entry-point/test HTTP/1.1
+08:31:02.728 [Thread-0] DEBUG org.apache.http.headers - &gt;&gt; Host: localhost:8080
+08:31:02.728 [Thread-0] DEBUG org.apache.http.headers - &gt;&gt; Connection: Keep-Alive
+08:31:02.728 [Thread-0] DEBUG org.apache.http.headers - &gt;&gt; User-Agent: Apache-HttpClient/4.4.1 (Java/1.7.0_79)
+08:31:02.841 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;HTTP/1.1 404 Not Found[\r][\n]&quot;
+08:31:02.844 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;Date: Fri, 15 Apr 2016 07:31:02 GMT[\r][\n]&quot;
+08:31:02.844 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;Cache-Control: must-revalidate,no-cache,no-store[\r][\n]&quot;
+08:31:02.844 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;Content-Type: text/html;charset=iso-8859-1[\r][\n]&quot;
+08:31:02.844 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;Content-Length: 301[\r][\n]&quot;
+08:31:02.844 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;Server: Jetty(9.3.0.M2)[\r][\n]&quot;
+08:31:02.844 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;[\r][\n]&quot;
+08:31:02.846 [Thread-0] DEBUG org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 Not Found
+08:31:02.846 [Thread-0] DEBUG org.apache.http.headers - &lt;&lt; HTTP/1.1 404 Not Found
+08:31:02.846 [Thread-0] DEBUG org.apache.http.headers - &lt;&lt; Date: Fri, 15 Apr 2016 07:31:02 GMT
+08:31:02.846 [Thread-0] DEBUG org.apache.http.headers - &lt;&lt; Cache-Control: must-revalidate,no-cache,no-store
+08:31:02.846 [Thread-0] DEBUG org.apache.http.headers - &lt;&lt; Content-Type: text/html;charset=iso-8859-1
+08:31:02.846 [Thread-0] DEBUG org.apache.http.headers - &lt;&lt; Content-Length: 301
+08:31:02.846 [Thread-0] DEBUG org.apache.http.headers - &lt;&lt; Server: Jetty(9.3.0.M2)
+08:31:02.855 [Thread-0] DEBUG org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;html&gt;[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;head&gt;[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;/&gt;[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;title&gt;Error 404 &lt;/title&gt;[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;/head&gt;[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;body&gt;[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;h2&gt;HTTP ERROR: 404&lt;/h2&gt;[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;p&gt;Problem accessing /simple/entry-point/test. Reason:[\n]&quot;
+08:31:02.868 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;pre&gt;    Not Found&lt;/pre&gt;&lt;/p&gt;[\n]&quot;
+08:31:02.869 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;hr /&gt;&lt;i&gt;&lt;small&gt;Powered by Jetty://&lt;/small&gt;&lt;/i&gt;[\n]&quot;
+08:31:02.869 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;/body&gt;[\n]&quot;
+08:31:02.869 [Thread-0] DEBUG org.apache.http.wire -  &lt;&lt; &quot;&lt;/html&gt;[\n]&quot;
+08:31:02.869 [Thread-0] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@53105e7a
+08:31:02.869 [Thread-0] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager - Connection can be kept alive indefinitely
+08:31:02.870 [Thread-0] DEBUG org.apache.http.impl.conn.DefaultClientConnection - Connection 0.0.0.0:50631&lt;-&gt;127.0.0.1:8080 closed
+</system-out>
   </testcase>
 </testsuite>

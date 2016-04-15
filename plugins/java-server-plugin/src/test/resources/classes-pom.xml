@@ -22,14 +22,18 @@
 				<version>${project.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<hostname>localhost</hostname>
-					<port>8095</port>
-					<loopback>15001</loopback>
 					<restapps>
 						<restapp>
-							<type>CLASSLIST</type>
-							<context>/*</context>
-							<classNames>java_server_plugin.services.EntryPoint</classNames>
+							<hostname>localhost</hostname>
+							<port>8095</port>
+							<loopback>15001</loopback>
+							<deployConfigs>
+								<deployConfig>
+									<type>CLASSLIST</type>
+									<context>/*</context>
+									<classNames>java_server_plugin.services.EntryPoint</classNames>
+								</deployConfig>
+							</deployConfigs>
 						</restapp>
 					</restapps>
 				</configuration>

@@ -528,15 +528,18 @@
 							<goal>connect</goal>
 						</goals>
 						<configuration>
-							<hostname>localhost</hostname>
-							<port>8080</port>
-							<timeout>0</timeout>
-							<loopback>15001</loopback>
 							<restapps>
 								<restapp>
-									<type>CLASSLIST</type>
-									<context>/simple</context>
-									<classNames>com.restify.tests.java.server.plugin.services.EntryPoint</classNames>
+									<hostname>localhost</hostname>
+									<port>8080</port>
+									<loopback>15001</loopback>
+									<deployConfigs>
+										<deployConfig>
+											<type>CLASSLIST</type>
+											<context>/simple</context>
+											<classNames>om.restify.tests.java.server.plugin.services.EntryPoint</classNames>
+										</deployConfig>
+									</deployConfigs>
 								</restapp>
 							</restapps>
 						</configuration>
@@ -548,8 +551,12 @@
 							<goal>disconnect</goal>
 						</goals>
 						<configuration>
-							<hostname>localhost</hostname>
-							<loopback>15001</loopback>
+							<disconnectConfigs>
+								<disconnectConfig>
+									<hostname>localhost</hostname>
+									<loopback>15001</loopback>
+								</disconnectConfig>
+							</disconnectConfigs>
 						</configuration>
 					</execution>
 				</executions>

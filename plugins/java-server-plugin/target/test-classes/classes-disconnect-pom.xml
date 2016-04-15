@@ -22,8 +22,12 @@
 				<version>${project.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<hostname>localhost</hostname>
-					<loopback>15001</loopback>
+					<disconnectConfigs>
+						<disconnectConfig>
+							<hostname>localhost</hostname>
+							<loopback>15001</loopback>
+						</disconnectConfig>
+					</disconnectConfigs>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -29,27 +29,6 @@
       <threadSafe>false</threadSafe>
       <parameters>
         <parameter>
-          <name>hostname</name>
-          <type>java.lang.String</type>
-          <required>true</required>
-          <editable>true</editable>
-          <description>Host name for the server execution.</description>
-        </parameter>
-        <parameter>
-          <name>loopback</name>
-          <type>int</type>
-          <required>true</required>
-          <editable>true</editable>
-          <description>Port number for the server loopback execution.</description>
-        </parameter>
-        <parameter>
-          <name>port</name>
-          <type>int</type>
-          <required>true</required>
-          <editable>true</editable>
-          <description>Port number for the server execution.</description>
-        </parameter>
-        <parameter>
           <name>project</name>
           <type>org.apache.maven.project.MavenProject</type>
           <required>false</required>
@@ -72,9 +51,6 @@
         </parameter>
       </parameters>
       <configuration>
-        <hostname implementation="java.lang.String" default-value="localhost"/>
-        <loopback implementation="int" default-value="150001"/>
-        <port implementation="int" default-value="8089"/>
         <project implementation="org.apache.maven.project.MavenProject" default-value="${project}"/>
         <restapps implementation="java.util.List">${restapps}</restapps>
         <startupTimeout implementation="long" default-value="0"/>
@@ -97,18 +73,11 @@
       <threadSafe>false</threadSafe>
       <parameters>
         <parameter>
-          <name>hostname</name>
-          <type>java.lang.String</type>
+          <name>disconnectConfigs</name>
+          <type>java.util.List</type>
           <required>true</required>
           <editable>true</editable>
           <description>Host name for the server execution.</description>
-        </parameter>
-        <parameter>
-          <name>loopback</name>
-          <type>int</type>
-          <required>true</required>
-          <editable>true</editable>
-          <description>Port number for the server loopback execution.</description>
         </parameter>
         <parameter>
           <name>project</name>
@@ -119,8 +88,6 @@
         </parameter>
       </parameters>
       <configuration>
-        <hostname implementation="java.lang.String" default-value="localhost"/>
-        <loopback implementation="int" default-value="150001"/>
         <project implementation="org.apache.maven.project.MavenProject" default-value="${project}"/>
       </configuration>
     </mojo>

@@ -1,48 +1,46 @@
 package java_server_plugin.config;
 
-import java.io.File;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RestAppConfig {
-	public enum TYPE {WAR, JAR, CLASSLIST};
-	public TYPE type;
-	public String context;
-	public File file;
-	public String classNames;
-	public Map<String, String> jerseyProperties;
+    private String hostname = "localhost";
+    private int loopback = 15001;
+    private int port = 8080;
+    private List<DeployConfig> deployConfigs = new ArrayList<DeployConfig>(0);
 	public RestAppConfig() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public TYPE getType() {
-		return type;
+	public String getHostname() {
+		return hostname;
 	}
-	public void setType(TYPE type) {
-		this.type = type;
+	public void setHostname(String hostname) {
+		this.hostname = hostname;
 	}
-	public String getContext() {
-		return context;
+	public int getPort() {
+		return port;
 	}
-	public void setContext(String context) {
-		this.context = context;
+	public void setPort(int port) {
+		this.port = port;
 	}
-	public Map<String, String> getJerseyProperties() {
-		return jerseyProperties;
+	public int getLoopback() {
+		return loopback;
 	}
-	public void setJerseyProperties(Map<String, String> jerseyProperties) {
-		this.jerseyProperties = jerseyProperties;
+	public void setLoopback(int loopback) {
+		this.loopback = loopback;
 	}
-	public File getFile() {
-		return file;
+	public List<DeployConfig> getDeployConfigs() {
+		return deployConfigs;
 	}
-	public void setFile(File file) {
-		this.file = file;
+	public void setDeployConfigs(List<DeployConfig> deployConfig) {
+		this.deployConfigs = deployConfig;
 	}
-	public String getClassNames() {
-		return classNames;
-	}
-	public void setClassNames(String classNames) {
-		this.classNames = classNames;
+	@Override
+	public String toString() {
+		return "RestAppConfig [hostname=" + hostname + ", port=" + port
+				+ ", loopback=" + loopback + ", deployConfig=" + deployConfigs
+				+ "]";
 	}
 	
 }
