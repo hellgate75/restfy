@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="0.823" errors="0" skipped="0" tests="1" name="com.restify.tests.java.server.plugin.JavaServerPluginTest">
+<testsuite failures="1" time="1.199" errors="0" skipped="0" tests="1" name="com.restify.tests.java.server.plugin.JavaServerPluginTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_79\jre\bin"/>
@@ -26,9 +26,10 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8.1"/>
-    <property name="classworlds.conf" value="C:\Lavoro\WORKSPACES\workspace-restfy\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1231493890041986749.tmp"/>
+    <property name="classworlds.conf" value="C:\Lavoro\WORKSPACES\workspace-restfy\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3177369974301998941.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_79\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/lib/amd64;C:\Program Files\Broadcom\Broadcom 802.11;;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Python34\;C:\Python34\Scripts;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\libexec\gcc\i686-w64-mingw32\5.1.0;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\i686-w64-mingw32\lib;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\bin;C:\Program Files (x86)\mingw-w64\i686-5.1.0-posix-dwarf-rt_v4-rev0\mingw32\i686-w64-mingw32\bin;C:\Program Files\Java\jdk1.7.0_79\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Hewlett-Packard\SimplePass\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Users\Fabrizio\AppData\Roaming\npm;C:\Program Files\nodejs\phantomjs-2.1.1-windows;C:\Program Files\nodejs\phantomjs-2.1.1-windows\bin;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files (x86)\Skype\Phone\;C:\Users\Fabrizio\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Lavoro\apache-maven-3.2.3\bin;C:\Program Files\Mercurial\;C:\Program Files (x86)\Bitvise SSH Client;;C:\Users\Fabrizio\.lein\bin;C:\Program Files\Mercurial;C:\Users\Fabrizio\AppData\Local\atom\bin;C:\Lavoro\eclipse-jee-juno-SR2-win32-x86_64\eclipse;;."/>
+    <property name="m2e.workspace.state" value="C:\Lavoro\WORKSPACES\workspace-restfy\.metadata\.plugins\org.eclipse.m2e.core\workspacestate.properties"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -44,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_79\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -U clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="it"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.823" classname="Description" name="test0PluginMustBeCreated">
+  <testcase time="1.199" classname="Description" name="test0PluginMustBeCreated">
     <failure message="expected:&lt;200&gt; but was:&lt;404&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;200&gt; but was:&lt;404&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:743)

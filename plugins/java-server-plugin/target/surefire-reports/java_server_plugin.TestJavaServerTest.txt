@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: java_server_plugin.TestJavaServerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.783 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.721 sec

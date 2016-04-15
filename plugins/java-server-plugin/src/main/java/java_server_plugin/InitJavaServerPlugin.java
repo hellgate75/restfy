@@ -64,7 +64,7 @@ public class InitJavaServerPlugin extends AbstractMojo {
     protected RestfyJavaServer initPlugin() {
     	RestfyJavaServer server = null;
     	try {
-			server = new RestfyJavaServer(true, "/", hostname, port);
+			server = new RestfyJavaServer(false, "/", hostname, port);
 		} catch (URISyntaxException e) {
 			getLog().error("Error during the instance of the RestFy Java Server caused by :");
 			getLog().error(e);
@@ -77,12 +77,13 @@ public class InitJavaServerPlugin extends AbstractMojo {
 	        				case WAR:
 	        					try {
 	    							server.setWar(config.getContext(), config.getFile());
+	    			    			getLog().info("Loaded WAR for context "+config.getContext()+" installed from file :" + config.getFile().getCanonicalPath());
 	    						} catch (Exception e) {
-	    			    			getLog().warn("WAR for context "+config.getContext()+" not installed in Restfy Java Server for following errors :");
+	    			    			getLog().error("WAR for context "+config.getContext()+" not installed in Restfy Java Server for following errors :");
 	    			    			getLog().error(e);
 	    						}
 	        					if (config.getFile()==null || !server.containsWarInContext(config.getContext(), config.getFile().getAbsolutePath())) {
-	    			    			getLog().warn("WAR for context "+config.getContext()+" not present inRestfy Java Server deployments");
+	    			    			getLog().error("WAR for context "+config.getContext()+" not present inRestfy Java Server deployments");
 	        					}
 	        					else {
 	        	        			isValidDeploy = true;
@@ -91,12 +92,14 @@ public class InitJavaServerPlugin extends AbstractMojo {
 	        				case JAR:
 	        					try {
 	    							server.addJar(config.getContext(), config.getFile(), config.getClassNames(), config.getJerseyProperties());
+	    			    			getLog().info("Loaded JAR for context "+config.getContext()+" installed from file :" + config.getFile().getCanonicalPath());
+	    			    			getLog().info("JAR exposed classes "+config.getClassNames()+" properties :" + config.getJerseyProperties());
 	    						} catch (Exception e) {
-	    			    			getLog().warn("JAR for context "+config.getContext()+" not installed in Restfy Java Server for following errors :");
+	    			    			getLog().error("JAR for context "+config.getContext()+" not installed in Restfy Java Server for following errors :");
 	    			    			getLog().error(e);
 	    						}
 	        					if (config.getFile()==null || !server.containsHolderInContext(config.getContext(), config.getClassNames())) {
-	    			    			getLog().warn("JAR for context "+config.getContext()+" not present inRestfy Java Server deployments");
+	    			    			getLog().error("JAR for context "+config.getContext()+" not present inRestfy Java Server deployments");
 	        					}
 	        					else {
 	        	        			isValidDeploy = true;
@@ -105,12 +108,13 @@ public class InitJavaServerPlugin extends AbstractMojo {
 	        				case CLASSLIST:
 	        					try {
 	    							server.addClassHolder(config.getContext(), config.getClassNames(), config.getJerseyProperties());
+	    			    			getLog().info("Loaded CLASSES for context "+config.getContext()+" exposed classes "+config.getClassNames()+" properties :" + config.getJerseyProperties());
 	    						} catch (Exception e) {
-	    			    			getLog().warn("CLASSES for context "+config.getContext()+" not installed in Restfy Java Server for following errors :");
+	    			    			getLog().error("CLASSES for context "+config.getContext()+" not installed in Restfy Java Server for following errors :");
 	    			    			getLog().error(e);
 	    						}
 	        					if (!server.containsHolderInContext(config.getContext(), config.getClassNames())) {
-	    			    			getLog().warn("CLASSES for context "+config.getContext()+" not present inRestfy Java Server deployments");
+	    			    			getLog().error("CLASSES for context "+config.getContext()+" not present inRestfy Java Server deployments");
 	        					}
 	        					else {
 	        	        			isValidDeploy = true;
@@ -120,11 +124,11 @@ public class InitJavaServerPlugin extends AbstractMojo {
         			}
     			}
         		else {
-        			getLog().warn("Wrong deployment list for Restfy Java Server WAR and JAR, CLASSLIST do not run together");
+        			getLog().error("Wrong deployment list for Restfy Java Server WAR and JAR, CLASSLIST do not run together");
         		}
     		}
     		else {
-    			getLog().warn("No Applications found for Restfy Java Server");
+    			getLog().error("No Applications found for Restfy Java Server");
     		}
     	}
     	return server;
@@ -141,7 +145,7 @@ public class InitJavaServerPlugin extends AbstractMojo {
 						server.start();
 					}
 					else {
-						getLog().warn("Unable to start the RestFy Java Server!!");
+						getLog().error("Unable to start the RestFy Java Server!!");
 					}
 				} catch (Exception e) {
 					getLog().error("Error during the STARTUP of the RestFy Java Server caused by :");

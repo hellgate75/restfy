@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.restify.tests.java.server.plugin.JavaServerPluginTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.824 sec <<< FAILURE!
-test0PluginMustBeCreated(com.restify.tests.java.server.plugin.JavaServerPluginTest)  Time elapsed: 0.823 sec  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.2 sec <<< FAILURE!
+test0PluginMustBeCreated(com.restify.tests.java.server.plugin.JavaServerPluginTest)  Time elapsed: 1.199 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:743)

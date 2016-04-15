@@ -45,7 +45,11 @@ public class DisposeJavaServerPlugin extends AbstractMojo {
     
 
 	public void execute() throws MojoExecutionException, MojoFailureException {
-		boolean stopped = RestfyJavaServer.stopRemoteServer(hostname, loopback);
+		try {
+			boolean stopped = RestfyJavaServer.stopRemoteServer(hostname, loopback);
+			getLog().info("Server stopped by signal : " + stopped);
+		} catch (Throwable e) {
+		}
 	}
 	
 

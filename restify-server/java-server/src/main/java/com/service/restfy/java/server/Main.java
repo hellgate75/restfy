@@ -26,7 +26,7 @@ public class Main {
 		DeployType deployType = DeployType.CLASS_DEPLOY;
 		String deployReference = "";
 		String deployClassNames = EntryPoint.class.getCanonicalName();
-		String deployContext = "/simple/";
+		String deployContext = "/simple";
 		String loopBackport = null;
 		for(int i=0; i < args.length; i++) {
 			String arg = args[i];

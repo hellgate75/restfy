@@ -1,3 +1,6 @@
-java_server_plugin\InitJavaServerPlugin$2.class
-java_server_plugin\config\RestAppConfig.class
 java_server_plugin\config\RestAppConfig$TYPE.class
+java_server_plugin\InitJavaServerPlugin.class
+java_server_plugin\InitJavaServerPlugin$1.class
+java_server_plugin\InitJavaServerPlugin$2.class
+java_server_plugin\DisposeJavaServerPlugin.class
+java_server_plugin\config\RestAppConfig.class
