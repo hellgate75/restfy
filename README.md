@@ -13,3 +13,4 @@ This project provide features and test plugin to fast serve rest services:
 
 
 (** UNDER DEVELOPMENT **)
+RUN: mvn -U install
