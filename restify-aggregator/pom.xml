@@ -88,25 +88,28 @@
 	</pluginRepositories>
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
+<!-- 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>container-bom-restify-java-server</artifactId>
 				<version>${project.version}</version>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>container-bom-restify-selenium2</artifactId>
 				<version>${project.version}</version>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>container-bom-restify-websocket-server</artifactId>
 				<version>${project.version}</version>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
-			<dependency>
+ -->			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>container-bom-jetty-embedded-7</artifactId>
 				<version>${project.version}</version>
@@ -116,6 +119,7 @@
 				<groupId>org.jboss.arquillian.container</groupId>
 				<artifactId>arquillian-jetty-embedded-7</artifactId>
 				<version>${version.arquillian_container_jetty}</version>
+				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 			<dependency>
