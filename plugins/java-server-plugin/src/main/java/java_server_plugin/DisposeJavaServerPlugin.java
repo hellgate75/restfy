@@ -17,7 +17,7 @@ import org.apache.maven.project.MavenProject;
 import com.service.restfy.java.server.RestfyJavaServer;
 
 /**
- * Goal which connect a Restify Java Server.
+ * Goal which disconnect a Restify Java Server.
  */
 @Mojo(defaultPhase=LifecyclePhase.TEST, name="disconnect")
 public class DisposeJavaServerPlugin extends AbstractMojo {
@@ -39,12 +39,13 @@ public class DisposeJavaServerPlugin extends AbstractMojo {
     
 
 	public void execute() throws MojoExecutionException, MojoFailureException {
+		getLog().info("Jetty 2 Server Plugin - Server disconnection and shutdown .... ");
 		for(DisconnectConfig config: disconnectConfigs) {
 			try {
 				boolean stopped = RestfyJavaServer.stopRemoteServer(config.getHostname(), config.getLoopback());
-				getLog().info("Server "+config+" stopped by signal : " + stopped);
+				getLog().info("Jetty 2 Server Plugin - Server "+config+" stopped by signal : " + stopped);
 			} catch (Throwable e) {
-				getLog().info("Server "+config+" stop error : ", e);
+				getLog().info("Jetty 2 Server Plugin - Server "+config+" stop error : ", e);
 			}
 		}
 	}

@@ -20,7 +20,7 @@ import com.service.restfy.java.server.RestfyJavaServer;
 /**
  * Goal which connect a Restify Java Server.
  */
-@Mojo(defaultPhase=LifecyclePhase.PROCESS_TEST_CLASSES, name="connect")
+@Mojo(defaultPhase=LifecyclePhase.TEST_COMPILE, threadSafe=false, name="connect")
 public class InitJavaServerPlugin extends AbstractMojo {
 
 	@Parameter( defaultValue = "${project}", readonly = true )
