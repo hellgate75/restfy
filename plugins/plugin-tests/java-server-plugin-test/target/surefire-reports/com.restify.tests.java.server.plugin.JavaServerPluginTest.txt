@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.restify.tests.java.server.plugin.JavaServerPluginTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.998 sec

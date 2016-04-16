@@ -18,12 +18,14 @@
         <dependency>
             <groupId>org.jboss.arquillian.container</groupId>
             <artifactId>arquillian-jetty-embedded-7</artifactId>
-            <scope>compile</scope>
+			<version>${version.arquillian_container_jetty}</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
 		<dependency>
 			<groupId>org.jboss.arquillian.junit</groupId>
 			<artifactId>arquillian-junit-container</artifactId>
-            <scope>compile</scope>
+            <scope>test</scope>
 		</dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
