@@ -17,5 +17,6 @@
   	<module>java-server-jar-test</module>
   	<module>java-server-war-test</module>
   	<module>java-server</module>
+  	<module>selenium-server</module>
   </modules>
 </project>

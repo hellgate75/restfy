@@ -7,7 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../../restify-aggregator/pom.xml</relativePath>
   </parent>
-	<artifactId>container-bom-spotify-selenium2</artifactId>
+	<artifactId>container-bom-restify-selenium2</artifactId>
 	<packaging>pom</packaging>
 	<name>Spotyfy Selenium 2 Container Boom</name>
 	<dependencies>

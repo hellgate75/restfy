@@ -90,19 +90,19 @@
 		<dependencies>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>container-bom-spotify-java-server</artifactId>
+				<artifactId>container-bom-restify-java-server</artifactId>
 				<version>${project.version}</version>
 				<type>pom</type>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>container-bom-spotify-selenium2</artifactId>
+				<artifactId>container-bom-restify-selenium2</artifactId>
 				<version>${project.version}</version>
 				<type>pom</type>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>container-bom-spotify-websocket-server</artifactId>
+				<artifactId>container-bom-restify-websocket-server</artifactId>
 				<version>${project.version}</version>
 				<type>pom</type>
 			</dependency>
@@ -321,6 +321,7 @@
 				<version>${version.log4j}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-api</artifactId>
@@ -369,52 +370,52 @@
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-java</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-api</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-support</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-server</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-firefox-driver</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-chrome-driver</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-ie-driver</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-safari-driver</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-htmlunit-driver</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.seleniumhq.selenium</groupId>
 				<artifactId>selenium-remote-driver</artifactId>
-				<version>{version.selenium}</version>
+				<version>${version.selenium}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
