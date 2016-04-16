@@ -11,6 +11,7 @@
   <modules>
   	<module>container-bom-spotify-java-server</module>
   	<module>container-boom-restfy-websocket-server</module>
+	<module>container-bom-spotify-selenium2</module>
   	<module>jetty-embedded-7</module>
   </modules>
 </project>

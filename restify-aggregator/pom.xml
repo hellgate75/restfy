@@ -41,6 +41,7 @@
 		<version.slf4j>2.3</version.slf4j>
 		<version.apachelogging>2.3</version.apachelogging>
 		<version.testng>6.5.2</version.testng>
+		<version.selenium>2.52.0</version.selenium>
 	</properties>
 	<repositories>
 		<repository>
