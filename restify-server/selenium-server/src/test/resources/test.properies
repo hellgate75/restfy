@@ -1,0 +1,8 @@
+com.service.restfy.selenium.server.driverSelector=CHROME_INTERNAL_SELECTOR
+#com.service.restfy.selenium.server.driverSubSelector=
+#com.service.restfy.selenium.server.driverSubDriverClass=
+#com.service.restfy.selenium.server.driverCapabilities=
+#com.service.restfy.selenium.server.driverService=
+#com.service.restfy.selenium.server.driverCommander=
+com.service.restfy.selenium.server.testCaseClasses=com.service.restfy.selenium.server.test.GoogleSearchTestCase
+#com.service.restfy.selenium.server.testCasePackages=

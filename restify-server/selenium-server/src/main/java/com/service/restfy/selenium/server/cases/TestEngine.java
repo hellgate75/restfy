@@ -25,9 +25,14 @@ public class TestEngine {
 	private WebDriver driver = null;
 	private List<TestCase> caseList = new ArrayList<TestCase>(0); 
 	private Map<String, String> caseMessages = new HashMap<String, String>(0); 
+	private Map<String, Boolean> caseResponseStatus = new HashMap<String, Boolean>(0); 
 	private int caseExecuted = 0;
 	private int caseFailed = 0;
 	private boolean traceRunOnLogger = true;
+
+	public TestEngine() {
+		super();
+	}
 
 	public TestEngine(WebDriver driver) {
 		super();
@@ -101,6 +106,8 @@ public class TestEngine {
 	public void run() throws Throwable {
 		caseExecuted = 0;
 		caseFailed = 0;
+		caseMessages.clear();
+		caseResponseStatus.clear();
 		for(TestCase t: caseList) {
 			caseExecuted++;
 			if (this.traceRunOnLogger)
@@ -112,9 +119,11 @@ public class TestEngine {
 				t.automatedTest(this.driver);
 				info("Executed test case [UID:"+t.getCaseUID()+"] name : " + t.getCaseName());
 				caseMessages.put(t.getCaseUID(), "[SUCCESS]: Test Case '"+t.getCaseName()+"' executed correctly.");
+				caseResponseStatus.put(t.getCaseUID(), true);
 			} catch (Throwable e) {
 				caseFailed++;
 				caseMessages.put(t.getCaseUID(), "[FAIL]: Test Case '"+t.getCaseName()+"' failed due to: "+ e.getMessage());
+				caseResponseStatus.put(t.getCaseUID(), false);
 				if(t.rethrowException())
 					throw e;
 				else
@@ -134,16 +143,58 @@ public class TestEngine {
 			TestCase testCase = caseList.get(i);
 			String message = caseMessages.get(testCase.getCaseUID());
 			if (message!=null) {
-				ps.println(message);
+				ps.println("Case " + (i+1) + " - " + message);
 			}
 			else {
-				ps.println("[SKIPPED]: Test Case '"+testCase.getCaseName()+"' skipped in last execution.");
+				ps.println("Case " + (i+1) + " - [SKIPPED]: Test Case '"+testCase.getCaseName()+"' skipped in last execution.");
 				skipped++;
 			}
 		}
 		ps.println(REPORT_LINE_SEPARATOR);
 		ps.println("Total Cases :  "+this.getCaseNumber()+"  Executed : " + this.caseExecuted + "  Skipped : " + skipped + "  Success : " + this.getCaseSecceded() + "  Failed : " + caseFailed);
 		ps.println(REPORT_LINE_SEPARATOR);
+	}
+
+	public String jsonReport() {
+		if (caseExecuted==0)
+			return "{"
+					+ "driver: \"" + this.driver.getClass().getName()+"\","
+					+ "cases: " + this.getCaseNumber()+","
+					+ "executed: " + this.caseExecuted+","
+					+ "skipped: " + 0 +","
+					+ "failed: " + this.caseFailed+","
+					+ "success: " + this.getCaseSecceded()+", casesResponse: []}";
+		int skipped = 0;
+		String cases = "";
+		for(int i=0; i<this.getCaseNumber();i++) {
+			TestCase testCase = caseList.get(i);
+			String message = caseMessages.get(testCase.getCaseUID());
+			if (message!=null) {
+				cases += (i>0 ? ", " : "") + "{"
+						+"caseName : \"" + testCase.getCaseName() + "\","
+						+"success : " + caseResponseStatus.get(testCase.getCaseUID()) + ","
+						+"skipped : false,"
+						+"message : \"" + caseMessages.get(testCase.getCaseUID()) + "\""
+						+ "}";
+			}
+			else {
+				cases += (i>0 ? ", " : "") + "{"
+						+"caseName : \"" + testCase.getCaseName() + "\","
+						+"success : " + caseResponseStatus.get(testCase.getCaseUID()) + ","
+						+"skipped : true,"
+						+"message : \"[SKIPPED]: Test Case '"+testCase.getCaseName()+"' skipped in last execution.\""
+						+ "}";
+				skipped++;
+			}
+		}
+		return "{"
+				+ "driver: \"" + this.driver.getClass().getName()+"\","
+				+ "cases: " + this.getCaseNumber()+","
+				+ "executed: " + this.caseExecuted+","
+				+ "skipped: " + skipped +","
+				+ "failed: " + this.caseFailed+","
+				+ "success: " + this.getCaseSecceded()+","
+				+ "casesResponse: ["+cases+"]}";
 	}
 
 	public int getCaseExecuted() {

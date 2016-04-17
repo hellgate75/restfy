@@ -75,8 +75,10 @@ public class SeleniumUtilities {
 	}
 
 	public static final void closeBrowserDriver(WebDriver webDriver) {
-		if (webDriver!=null)
+		if (webDriver!=null) {
 			webDriver.close();
+			webDriver.quit();
+		}
 	}
 
 	public static final void saveScreenShot(WebDriver webDriver, String screenshotFileName) throws FrameworkException{
