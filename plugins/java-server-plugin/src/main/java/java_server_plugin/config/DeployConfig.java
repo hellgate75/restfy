@@ -14,7 +14,6 @@ public class DeployConfig {
 	public Map<String, String> jerseyProperties;
 	public DeployConfig() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public TYPE getType() {
 		return type;

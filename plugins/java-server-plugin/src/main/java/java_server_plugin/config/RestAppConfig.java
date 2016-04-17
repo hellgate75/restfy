@@ -10,7 +10,6 @@ public class RestAppConfig {
     private List<DeployConfig> deployConfigs = new ArrayList<DeployConfig>(0);
 	public RestAppConfig() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public String getHostname() {
 		return hostname;

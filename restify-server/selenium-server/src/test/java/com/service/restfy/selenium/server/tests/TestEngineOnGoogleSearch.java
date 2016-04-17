@@ -17,7 +17,7 @@ import com.service.restfy.selenium.server.utils.SeleniumUtilities;
 import com.service.restfy.selenium.server.utils.SeleniumUtilities.BROWSER_TYPE;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestTestEngineOnGoogleSearch {
+public class TestEngineOnGoogleSearch {
 
 	private static WebDriver chromeWebDriver = null;
 	private static WebDriver firefoxWebDriver = null;
@@ -67,7 +67,7 @@ public class TestTestEngineOnGoogleSearch {
 			firefoxWebDriver = SeleniumUtilities.getBrowserDriver(BROWSER_TYPE.FIREFOX);
 	}
 	
-	@Test(timeout=20000)
+	@Test(timeout=25000)
 	public void run0GoogleTestOnIExplorer() throws Throwable {
 		if (isWindows) {
 			initIeWebDriver();
@@ -81,7 +81,7 @@ public class TestTestEngineOnGoogleSearch {
 		}
 	}
 
-	@Test(timeout=20000)
+	@Test(timeout=25000)
 	public void run1GoogleTestOnChrome() throws Throwable {
 		initChromeWebDriver();
 		testEngine.setWebDriver(chromeWebDriver);
@@ -93,7 +93,7 @@ public class TestTestEngineOnGoogleSearch {
 	}
 	
 
-	@Test(timeout=20000)
+	@Test(timeout=25000)
 	public void run2GoogleTestOnFirefox() throws Throwable {
 		initFirefoxWebDriver();
 		testEngine.setWebDriver(firefoxWebDriver);

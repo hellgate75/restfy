@@ -8,7 +8,6 @@ public class DisconnectConfig {
     private int loopback = 15001;
 	public DisconnectConfig() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public String getHostname() {
 		return hostname;

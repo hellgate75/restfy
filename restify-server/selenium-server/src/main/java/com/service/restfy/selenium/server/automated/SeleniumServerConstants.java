@@ -10,5 +10,10 @@ public class SeleniumServerConstants {
 	public static final String driverCommander = "com.service.restfy.selenium.server.driverCommander";
 	public static final String testCaseClasses = "com.service.restfy.selenium.server.testCaseClasses";
 	public static final String testCasePackages = "com.service.restfy.selenium.server.testCasePackages";
+	public static final String loggingActive = "com.service.restfy.selenium.server.loggingActive";
+	public static final String reportActive = "com.service.restfy.selenium.server.reportActive";
+	public static final String reportJSONActive = "com.service.restfy.selenium.server.reportJSONActive";
+	public static final String outputJSon = "com.service.restfy.selenium.server.outputJSon";
+	public static final String outputReport = "com.service.restfy.selenium.server.outputLog";
 
 }

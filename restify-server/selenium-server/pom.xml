@@ -8,7 +8,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>selenium-server</artifactId>
-	<name>Selenium Test Framework</name>
+	<name>Selenium 2 Test Framework</name>
 	<organization>
 		<name>Fabrizio Torelli</name>
 		<url>http://ie.linkedin.com/in/fabriziotorelli</url>

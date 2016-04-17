@@ -51,6 +51,14 @@ public class TestEngine {
 		}
 	}
 
+	public boolean isTraceRunOnLogger() {
+		return traceRunOnLogger;
+	}
+
+	public void setTraceRunOnLogger(boolean traceRunOnLogger) {
+		this.traceRunOnLogger = traceRunOnLogger;
+	}
+
 	public WebDriver getWebDriver() {
 		return driver;
 	}
@@ -85,6 +93,10 @@ public class TestEngine {
 			error("Error loading package : " + packageName, e);
 			throw new FrameworkException("Error loading package : " + packageName, e);
 		}
+	}
+	
+	public void clearCaseList() {
+		caseList.clear();
 	}
 	
 	public int getCaseNumber() {
@@ -158,12 +170,12 @@ public class TestEngine {
 	public String jsonReport() {
 		if (caseExecuted==0)
 			return "{"
-					+ "driver: \"" + this.driver.getClass().getName()+"\","
-					+ "cases: " + this.getCaseNumber()+","
-					+ "executed: " + this.caseExecuted+","
-					+ "skipped: " + 0 +","
-					+ "failed: " + this.caseFailed+","
-					+ "success: " + this.getCaseSecceded()+", casesResponse: []}";
+					+ "\"driver\": \"" + this.driver.getClass().getName()+"\","
+					+ "\"cases\": " + this.getCaseNumber()+","
+					+ "\"executed\": " + this.caseExecuted+","
+					+ "\"skipped\": " + 0 +","
+					+ "\"failed\": " + this.caseFailed+","
+					+ "\"success\": " + this.getCaseSecceded()+", \"casesResponse\": []}";
 		int skipped = 0;
 		String cases = "";
 		for(int i=0; i<this.getCaseNumber();i++) {
@@ -171,30 +183,30 @@ public class TestEngine {
 			String message = caseMessages.get(testCase.getCaseUID());
 			if (message!=null) {
 				cases += (i>0 ? ", " : "") + "{"
-						+"caseName : \"" + testCase.getCaseName() + "\","
-						+"success : " + caseResponseStatus.get(testCase.getCaseUID()) + ","
-						+"skipped : false,"
-						+"message : \"" + caseMessages.get(testCase.getCaseUID()) + "\""
+						+"\"caseName\" : \"" + testCase.getCaseName() + "\","
+						+"\"success\" : " + caseResponseStatus.get(testCase.getCaseUID()) + ","
+						+"\"skipped\" : false,"
+						+"\"message\" : \"" + caseMessages.get(testCase.getCaseUID()) + "\""
 						+ "}";
 			}
 			else {
 				cases += (i>0 ? ", " : "") + "{"
-						+"caseName : \"" + testCase.getCaseName() + "\","
-						+"success : " + caseResponseStatus.get(testCase.getCaseUID()) + ","
-						+"skipped : true,"
-						+"message : \"[SKIPPED]: Test Case '"+testCase.getCaseName()+"' skipped in last execution.\""
+						+"\"caseName\" : \"" + testCase.getCaseName() + "\","
+						+"\"success\" : " + caseResponseStatus.get(testCase.getCaseUID()) + ","
+						+"\"skipped\" : true,"
+						+"\"message\" : \"[SKIPPED]: Test Case '"+testCase.getCaseName()+"' skipped in last execution.\""
 						+ "}";
 				skipped++;
 			}
 		}
 		return "{"
-				+ "driver: \"" + this.driver.getClass().getName()+"\","
-				+ "cases: " + this.getCaseNumber()+","
-				+ "executed: " + this.caseExecuted+","
-				+ "skipped: " + skipped +","
-				+ "failed: " + this.caseFailed+","
-				+ "success: " + this.getCaseSecceded()+","
-				+ "casesResponse: ["+cases+"]}";
+				+ "\"driver\": \"" + this.driver.getClass().getName()+"\","
+				+ "\"cases\": " + this.getCaseNumber()+","
+				+ "\"executed\": " + this.caseExecuted+","
+				+ "\"skipped\": " + skipped +","
+				+ "\"failed\": " + this.caseFailed+","
+				+ "\"success\": " + this.getCaseSecceded()+","
+				+ "\"casesResponse\": ["+cases+"]}";
 	}
 
 	public int getCaseExecuted() {

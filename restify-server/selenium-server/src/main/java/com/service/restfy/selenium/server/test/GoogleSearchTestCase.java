@@ -16,7 +16,7 @@ public class GoogleSearchTestCase extends BaseTestCase {
 	private String googleSearchText = "";
 	
 	public GoogleSearchTestCase() {
-		super("Google Test Case", "http://www.google.com", true, true);
+		super("Google Search Test Case", "http://www.google.com", true, true);
 	}
 
 	@Override

@@ -2,7 +2,9 @@ package com.service.restfy.selenium.server.automated;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -11,7 +13,6 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import static org.junit.Assert.*;
 
 import com.service.restfy.selenium.server.automated.WebDriveFactory.SELECTOR_TYPE;
 import com.service.restfy.selenium.server.cases.TestEngine;
@@ -29,13 +30,13 @@ public class SeleniumAutomatedServer {
 	private final TestEngine testEngine = new TestEngine();
 	private Properties engineProperties = new Properties();
 	private WebDriverSelector driverSelector = null;
-	private boolean loggingActive = true;
 
 	public SeleniumAutomatedServer() {
 		super();
 	}
 
 	public void readConfig(String filePath) throws NotFoundException, FrameworkException{
+		engineProperties.clear();
 		try {
 			engineProperties.load(new FileInputStream(filePath));
 		} catch (FileNotFoundException e) {
@@ -48,6 +49,7 @@ public class SeleniumAutomatedServer {
 	}
 
 	public void readConfigXml(String filePath) throws NotFoundException, FrameworkException{
+		engineProperties.clear();
 		try {
 			engineProperties.loadFromXML(new FileInputStream(filePath));
 		} catch (FileNotFoundException e) {
@@ -96,6 +98,7 @@ public class SeleniumAutomatedServer {
 		}
 		
 		try {
+			this.testEngine.clearCaseList();
 			if (engineProperties.containsKey(SeleniumServerConstants.testCaseClasses)) {
 				String[] classes = engineProperties.getProperty(SeleniumServerConstants.testCaseClasses).split(",");
 				for (String className: classes) {
@@ -112,6 +115,75 @@ public class SeleniumAutomatedServer {
 			throw new FrameworkException(logginPrefix+"Unable to load the test cases due to : ", e1);
 		}
 		
+		if (engineProperties.containsKey(SeleniumServerConstants.loggingActive)) {
+			try {
+				Boolean logging = Boolean.parseBoolean(engineProperties.getProperty(SeleniumServerConstants.loggingActive));
+				this.testEngine.setTraceRunOnLogger(logging);
+			} catch (Exception e) {
+				logger.warn("Engine Logging parameter '" + engineProperties.getProperty(SeleniumServerConstants.loggingActive) + " has an invalid boolean format ...");
+			}
+		}
+		
+		boolean reportActive = true;
+		boolean reportJSONActive = false;
+
+		if (engineProperties.containsKey(SeleniumServerConstants.reportActive)) {
+			try {
+				reportActive = Boolean.parseBoolean(engineProperties.getProperty(SeleniumServerConstants.reportActive));
+			} catch (Exception e) {
+				logger.warn("Report Export parameter '" + engineProperties.getProperty(SeleniumServerConstants.reportActive) + " has an invalid boolean format ...");
+			}
+		}
+
+		if (engineProperties.containsKey(SeleniumServerConstants.reportJSONActive)) {
+			try {
+				reportJSONActive = Boolean.parseBoolean(engineProperties.getProperty(SeleniumServerConstants.reportJSONActive));
+			} catch (Exception e) {
+				logger.warn("Report JSON Export parameter '" + engineProperties.getProperty(SeleniumServerConstants.reportJSONActive) + " has an invalid boolean format ...");
+			}
+		}
+		logger.info("Logging Active : " + testEngine.isTraceRunOnLogger());
+		logger.info("Report Active : " + reportActive);
+		logger.info("Report JSON Active : " + reportJSONActive);
+		PrintStream reportOut = System.out;
+		boolean customReportOut = false;
+		PrintStream reportJSONOut = System.out;
+		boolean customReportJSONOut = false;
+		
+		if (reportActive) {
+			if (engineProperties.containsKey(SeleniumServerConstants.outputReport)) {
+				try {
+					//TODO Report Out : Includere modulo per scrittura su stream web
+					reportOut = new PrintStream(new FileOutputStream(engineProperties.getProperty(SeleniumServerConstants.outputReport), false));
+					customReportOut = true;
+				} catch (Throwable e) {
+					logger.warn("Report output not available on file '" + engineProperties.getProperty(SeleniumServerConstants.outputReport) + " using standard output ...");
+				}
+				logger.info("Report Output : " + engineProperties.getProperty(SeleniumServerConstants.outputReport));
+			}
+			else {
+				logger.info("Report Output : STANDARD OUTPUT");
+			}
+		}
+		else
+			reportOut = null;
+		if (reportJSONActive) {
+			if (engineProperties.containsKey(SeleniumServerConstants.outputJSon)) {
+				try {
+					//TODO Report JSON: Includere modulo per scrittura su stream web
+					reportJSONOut = new PrintStream(new FileOutputStream(engineProperties.getProperty(SeleniumServerConstants.outputJSon), false));
+					customReportJSONOut = true;
+				} catch (Throwable e) {
+					logger.warn("Report json output not available on file '" + engineProperties.getProperty(SeleniumServerConstants.outputJSon) + " using standard output ...");
+				}
+				logger.info("Report JSON Output : " + engineProperties.getProperty(SeleniumServerConstants.outputJSon));
+			}
+			else {
+				logger.info("Report JSON Output : STANDARD OUTPUT");
+			}
+		}
+		else 
+			reportJSONOut = null;
 		
 		try {
 			driverSelector = WebDriveFactory.getInstance().getDriverSelector(selector, parameters.toArray());
@@ -129,7 +201,25 @@ public class SeleniumAutomatedServer {
 			if (driverSelector!=null)
 				driverSelector.stopWebDriver();
 		}
-		testEngine.report(System.out);
+		if (reportActive)
+			testEngine.report(reportOut);
+		if (reportJSONActive)
+			printJSON(reportJSONOut, testEngine.jsonReport());
+		if (customReportOut) {
+			try {
+				reportOut.close();
+			} catch (Throwable e) {
+			}
+		}
+		if (customReportJSONOut) {
+			try {
+				reportJSONOut.close();
+			} catch (Throwable e) {
+			}
+		}
 	}
 	
+	protected final void printJSON(PrintStream stream, String json) {
+		stream.print(json);
+	}
 }
