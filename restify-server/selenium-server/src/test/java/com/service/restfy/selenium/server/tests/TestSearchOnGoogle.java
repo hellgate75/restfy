@@ -78,7 +78,7 @@ public class TestSearchOnGoogle {
 //		SeleniumUtilities.closeBrowserDriver(firefoxWebDriver);
 	}
 	
-	@Test(timeout=7000)
+	@Test(timeout=10000)
 	public void run1GoogleTestOnChrome() throws NotFoundException, FrameworkException, ActionException {
 		assertEquals("The page title should equal Google at the start of the test.", "Google", chromeWebDriver.getTitle());
 		WebElement searchField = SeleniumUtilities.searchByClause(chromeWebDriver, By.name("q"));
@@ -96,12 +96,11 @@ public class TestSearchOnGoogle {
 			chromeService.stop();
 	}
 	
-	@Test(timeout=7000)
+	@Test(timeout=10000)
 	public void run0GoogleTestOnIExplorer() throws NotFoundException, FrameworkException, ActionException {
 		if (isWindows) {
 			assertEquals("The page title should equal Google at the start of the test.", "Google", ieWebDriver.getTitle());
 			WebElement searchField = SeleniumUtilities.searchByClause(ieWebDriver, By.xpath("//input[@name='q']"));
-			System.out.println("searchField=" + searchField);
 			SeleniumUtilities.setValueToElement(searchField, googleSearchText);
 			SeleniumUtilities.submitButtonElement(searchField);
 		    assertTrue("The page title should start with the search string after the search.",
@@ -119,7 +118,7 @@ public class TestSearchOnGoogle {
 		}
 	}
 
-	@Test(timeout=7000)
+	@Test(timeout=10000)
 	public void run2GoogleTestOnFirefox() throws NotFoundException, FrameworkException, ActionException {
 		assertEquals("The page title should equal Google at the start of the test.", "Google", firefoxWebDriver.getTitle());
 		WebElement searchField = SeleniumUtilities.searchByClause(firefoxWebDriver, By.name("q"));
