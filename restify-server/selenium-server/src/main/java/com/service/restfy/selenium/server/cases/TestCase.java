@@ -1,5 +1,6 @@
 package com.service.restfy.selenium.server.cases;
 
+import java.util.Map;
 import java.util.UUID;
 
 import org.openqa.selenium.WebDriver;
@@ -16,20 +17,26 @@ public abstract class TestCase {
 		return uid;
 	}
 	
+	public abstract Map<String, String> getSecurityInfo();
+	
 	public abstract String getCaseName();
 
-	public abstract String getCaseURL();
+	public abstract String getConnectionURL();
 
-	public abstract boolean connectToURL();
+	public abstract boolean isSecureConnection();
 
-	public abstract boolean rethrowException();
+	public abstract boolean handleSecureConnection(WebDriver driver);
+
+	public abstract boolean isConnectionRequired();
+
+	public abstract boolean isExceptionTransversable();
 	
 	public abstract void automatedTest(WebDriver driver) throws Throwable;
 
 	@Override
 	public final String toString() {
 		return "TestCase [Unique Identifier="+uid+", Case Name=" + getCaseName() + ", Case URL="
-				+ getCaseURL() + ", Connect URL=" + connectToURL() + "]";
+				+ getConnectionURL() + ", Connect URL=" + isConnectionRequired() + "]";
 	}
 
 	@Override

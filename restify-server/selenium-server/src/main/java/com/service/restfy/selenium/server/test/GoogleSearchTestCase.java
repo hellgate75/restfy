@@ -13,7 +13,7 @@ import com.service.restfy.selenium.server.cases.BaseTestCase;
 import com.service.restfy.selenium.server.utils.SeleniumUtilities;
 
 public class GoogleSearchTestCase extends BaseTestCase {
-	private String googleSearchText = "";
+	private String googleSearchText = "Selenium2";
 	
 	public GoogleSearchTestCase() {
 		super("Google Search Test Case", "http://www.google.com", true, true);

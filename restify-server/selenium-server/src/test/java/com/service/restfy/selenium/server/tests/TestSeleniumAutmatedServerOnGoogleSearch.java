@@ -1,21 +1,10 @@
 package com.service.restfy.selenium.server.tests;
 
-import java.io.File;
-
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.ie.InternetExplorerDriverEngine;
-import org.openqa.selenium.ie.InternetExplorerDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.service.restfy.selenium.server.automated.SeleniumAutomatedServer;
-import com.service.restfy.selenium.server.cases.TestEngine;
-import com.service.restfy.selenium.server.test.GoogleSearchTestCase;
-import com.service.restfy.selenium.server.utils.SeleniumUtilities;
-import com.service.restfy.selenium.server.utils.SeleniumUtilities.BROWSER_TYPE;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestSeleniumAutmatedServerOnGoogleSearch {

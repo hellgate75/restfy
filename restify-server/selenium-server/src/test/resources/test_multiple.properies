@@ -12,5 +12,5 @@ com.service.restfy.selenium.server.reportJSONActive=true
 com.service.restfy.selenium.server.outputJSon=reports/reportMultipleJSON.txt
 com.service.restfy.selenium.server.outputLog=reports/reportMultipleOutput.txt
 com.service.restfy.selenium.server.runParallel=true
-com.service.restfy.selenium.server.parallelInstances=20
-com.service.restfy.selenium.server.parallelLimit=10
+com.service.restfy.selenium.server.parallelInstances=30
+com.service.restfy.selenium.server.parallelLimit=15

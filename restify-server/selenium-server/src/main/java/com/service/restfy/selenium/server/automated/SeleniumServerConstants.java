@@ -15,5 +15,8 @@ public class SeleniumServerConstants {
 	public static final String reportJSONActive = "com.service.restfy.selenium.server.reportJSONActive";
 	public static final String outputJSon = "com.service.restfy.selenium.server.outputJSon";
 	public static final String outputReport = "com.service.restfy.selenium.server.outputLog";
+	public static final String runParallel = "com.service.restfy.selenium.server.runParallel";
+	public static final String parallelInstances = "com.service.restfy.selenium.server.parallelInstances";
+	public static final String parallelLimit = "com.service.restfy.selenium.server.parallelLimit";
 
 }
